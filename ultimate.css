@@ -1,0 +1,203 @@
+/* style.css - Інтегрована (Responsive) версія */
+
+/* --- Скидання стилів та базові налаштування --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Важливо для адаптивності */
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+div,
+p,
+h1 {
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    /* Картинка адаптується до ширини контейнера */
+    height: auto;
+    /* Зберігає пропорції */
+}
+
+li {
+    margin-left: 25px;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+/* --- Основна структура (Desktop First) --- */
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Обмеження ширини на великих моніторах */
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    background-color: rgb(130, 108, 108);
+    padding: 25px;
+    justify-content: space-between;
+    align-items: center;
+    /* Центрування по вертикалі */
+}
+
+.titleText {
+    background-color: aquamarine;
+    padding: 10px;
+    /* Збільшив padding для естетики */
+    text-align: end;
+    width: 500px;
+    max-width: 100%;
+    /* Щоб не вилазив на менших екранах */
+}
+
+/* BODY */
+.mainBody {
+    display: flex;
+    flex: 1;
+    /* Розтягуємо контент */
+}
+
+/* NAVIGATION */
+.navigation {
+    background-color: rgb(255, 212, 212);
+    flex: 0 0 200px;
+    /* Фіксуємо ширину меню зліва */
+}
+
+.navigation ul {
+    margin: 15px;
+}
+
+/* MAIN CONTENT AREA */
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* width: 0;  Цей хак іноді потрібен для flex, щоб текст переносився, але поки опустимо */
+}
+
+.breakingPost {
+    background-color: rgb(208, 208, 221);
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.article {
+    flex: 2;
+    /* Стаття займає 2 частини ширини */
+    padding: 15px;
+}
+
+.helperContent {
+    flex: 1;
+    /* Хелпер займає 1 частину ширини */
+    background-color: rgb(245, 201, 201);
+    padding: 15px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: rgb(130, 108, 108);
+    padding: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .motto {
+    background-color: chocolate;
+    text-align: end;
+    width: 500px;
+    max-width: 100%;
+}
+
+/* =============================================
+   АДАПТАЦІЯ ПІД МОБІЛЬНІ (Media Queries)
+   ============================================= */
+@media screen and (max-width: 768px) {
+
+    /* Змінюємо напрямок header на вертикальний */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titleText {
+        text-align: center;
+        width: 100%;
+        /* На всю ширину */
+        margin-bottom: 10px;
+    }
+
+    /* Основний контейнер стає вертикальним (прибираємо сайдбар зліва) */
+    .mainBody {
+        flex-direction: column;
+    }
+
+    /* Навігація переміщується вгору */
+    .navigation {
+        flex: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+
+    .navigation li {
+        margin: 5px 10px;
+        /* Відступи між пунктами */
+        margin-left: 0;
+        /* Скидаємо стандартний відступ li */
+    }
+
+    /* Контент теж стає вертикальним */
+    .content {
+        flex-direction: column;
+    }
+
+    .article {
+        border-bottom: 1px solid #ccc;
+        /* Розділювач */
+    }
+
+    /* Футер адаптуємо */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .motto {
+        text-align: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    footer p {
+        order: -1;
+        /* Текст може бути вище, якщо треба */
+    }
+}

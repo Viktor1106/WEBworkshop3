@@ -1,0 +1,135 @@
+/* mobile.css - Full Height "App-like" Feel */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* Critical for filling the screen */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    /* Light grey background for the whole screen */
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Forces the page to be at least the height of the screen */
+}
+
+/* --- HEADER --- */
+header {
+    background-color: rgb(130, 108, 108);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.titleText {
+    background-color: aquamarine;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: black;
+    border-radius: 4px;
+}
+
+/* --- EXPANDING BODY --- */
+/* This chain ensures the content pushes the footer down */
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Grows to fill space */
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Grows to fill space */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Grows to fill space */
+}
+
+/* --- NAVIGATION --- */
+.navigation {
+    background-color: rgb(255, 212, 212);
+    padding: 10px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* Spreads buttons evenly */
+    gap: 5px;
+}
+
+.navigation li {
+    flex: 1;
+    /* Makes all buttons equal width */
+    margin: 0;
+}
+
+.navigation a {
+    display: block;
+    text-align: center;
+    padding: 12px 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* --- CONTENT BLOCKS --- */
+.breakingPost {
+    background-color: rgb(208, 208, 221);
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.article {
+    background-color: white;
+    padding: 20px;
+    flex: 1;
+    /* This makes the article take up the most empty space */
+}
+
+.helperContent {
+    background-color: rgb(245, 201, 201);
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: rgb(130, 108, 108);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+    /* Safety net to push footer down */
+}
+
+footer .motto {
+    background-color: chocolate;
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+    border-radius: 4px;
+}
